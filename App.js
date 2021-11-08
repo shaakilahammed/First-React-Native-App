@@ -23,7 +23,7 @@ import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 
 export default function App() {
-  return <ViewImageScreen />;
+  // return <ViewImageScreen />;
   // return <WelcomeScreen />;
   // // const handlePress = () => console.log(require('./assets/favicon.png'));
   // // console.log(Dimensions.get('window'));
@@ -119,7 +119,83 @@ export default function App() {
   //     ></View>
   //   </View>
   // );
+
+  //   return (
+  //     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+  //       <View
+  //         style={{
+  //           backgroundColor: 'blue',
+  //           height: 100,
+  //           width: 100,
+  //           borderWidth: 10,
+  //           borderColor: 'red',
+  //           borderRadius: 10,
+  //           borderTopWidth: 20,
+  //         }}
+  //       ></View>
+  //     </View>
+  //   );
+  // }
+
+  // return (
+  //   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+  //     <View
+  //       style={{
+  //         backgroundColor: 'blue',
+  //         height: 100,
+  //         width: 100,
+  //         shadowColor: 'grey',
+  //         shadowOffset: { width: 20, height: 20 },
+  //         shadowOpacity: 1,
+  //         elevation: 100,
+  //         padding: 20,
+  //         paddingHorizontal: 60,
+  //         paddingLeft: 30,
+  //       }}
+  //     >
+  //       <View
+  //         style={{
+  //           backgroundColor: 'red',
+  //           width: 50,
+  //           height: 50,
+  //         }}
+  //       ></View>
+  //     </View>
+  //     <View
+  //       style={{
+  //         backgroundColor: 'tomato',
+  //         width: 100,
+  //         height: 100,
+  //         marginEnd: 56,
+  //       }}
+  //     ></View>
+  //   </View>
+  // );
+
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text
+        style={{
+          // fontFamily: 'Roboto',
+          fontSize: 20,
+          // fontWeight: '900',
+          // fontStyle: 'italic',
+          color: 'tomato',
+          textTransform: 'uppercase',
+          // textDecorationLine: 'underline line-through',
+          // textDecorationStyle: '',
+          textAlign: 'center',
+          // textAlignVertical: '',
+          lineHeight: 35,
+        }}
+      >
+        React Native React NativeReact NativeReact Native React NativeReact
+        Native React NativeReact NativeReact Native React Native
+      </Text>
+    </View>
+  );
 }
+
 // const styles = StyleSheet.create({
 //   container: {
 //     flex: 1,

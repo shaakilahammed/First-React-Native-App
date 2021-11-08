@@ -8,7 +8,7 @@ function WelcomeScreen(props) {
       source={require('../assets/background.jpg')}
     >
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require('../assets/logo.png')} />
+        <Image style={styles.logo} source={require('../assets/logo-red.png')} />
         <Text style={styles.logoTitle}>Here is the Title of Your App</Text>
       </View>
 
