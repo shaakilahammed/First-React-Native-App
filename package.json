@@ -17,6 +17,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.2",
+    "react-native-font-weight": "^0.1.5-alpha",
     "react-native-web": "0.17.1"
   },
   "devDependencies": {

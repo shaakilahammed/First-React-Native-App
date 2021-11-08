@@ -19,8 +19,13 @@ import {
   useDimensions,
   useDeviceOrientation,
 } from '@react-native-community/hooks';
+import { Entypo } from '@expo/vector-icons';
+
+import AppText from './app/components.js/AppText';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
+import colors from './app/config/colors';
+import AppButton from './app/components.js/AppButton';
 
 export default function App() {
   // return <ViewImageScreen />;
@@ -174,11 +179,11 @@ export default function App() {
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text
+      {/* <Text
         style={{
-          // fontFamily: 'Roboto',
+          fontFamily: 'sans-serif-thin',
           fontSize: 20,
-          // fontWeight: '900',
+          fontWeight: '900',
           // fontStyle: 'italic',
           color: 'tomato',
           textTransform: 'uppercase',
@@ -191,7 +196,14 @@ export default function App() {
       >
         React Native React NativeReact NativeReact Native React NativeReact
         Native React NativeReact NativeReact Native React Native
-      </Text>
+      </Text> */}
+
+      <AppText>I Love React Native!!!</AppText>
+      <Entypo name="mail" color={colors.primary} size={50} />
+      <AppButton
+        title="Login"
+        onPress={() => console.log('Tapped')}
+      ></AppButton>
     </View>
   );
 }
