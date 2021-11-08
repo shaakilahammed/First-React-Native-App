@@ -29,7 +29,7 @@ import AppButton from './app/components.js/AppButton';
 
 export default function App() {
   // return <ViewImageScreen />;
-  // return <WelcomeScreen />;
+  return <WelcomeScreen />;
   // // const handlePress = () => console.log(require('./assets/favicon.png'));
   // // console.log(Dimensions.get('window'));
   // // console.log(Dimensions.get('screen'));
@@ -177,35 +177,35 @@ export default function App() {
   //   </View>
   // );
 
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      {/* <Text
-        style={{
-          fontFamily: 'sans-serif-thin',
-          fontSize: 20,
-          fontWeight: '900',
-          // fontStyle: 'italic',
-          color: 'tomato',
-          textTransform: 'uppercase',
-          // textDecorationLine: 'underline line-through',
-          // textDecorationStyle: '',
-          textAlign: 'center',
-          // textAlignVertical: '',
-          lineHeight: 35,
-        }}
-      >
-        React Native React NativeReact NativeReact Native React NativeReact
-        Native React NativeReact NativeReact Native React Native
-      </Text> */}
+  //   return (
+  //     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+  //       {/* <Text
+  //         style={{
+  //           fontFamily: 'sans-serif-thin',
+  //           fontSize: 20,
+  //           fontWeight: '900',
+  //           // fontStyle: 'italic',
+  //           color: 'tomato',
+  //           textTransform: 'uppercase',
+  //           // textDecorationLine: 'underline line-through',
+  //           // textDecorationStyle: '',
+  //           textAlign: 'center',
+  //           // textAlignVertical: '',
+  //           lineHeight: 35,
+  //         }}
+  //       >
+  //         React Native React NativeReact NativeReact Native React NativeReact
+  //         Native React NativeReact NativeReact Native React Native
+  //       </Text> */}
 
-      <AppText>I Love React Native!!!</AppText>
-      <Entypo name="mail" color={colors.primary} size={50} />
-      <AppButton
-        title="Login"
-        onPress={() => console.log('Tapped')}
-      ></AppButton>
-    </View>
-  );
+  //       <AppText>I Love React Native!!!</AppText>
+  //       <Entypo name="mail" color={colors.primary} size={50} />
+  //       <AppButton
+  //         title="Login"
+  //         onPress={() => console.log('Tapped')}
+  //       ></AppButton>
+  //     </View>
+  //   );
 }
 
 // const styles = StyleSheet.create({
