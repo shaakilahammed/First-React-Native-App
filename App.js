@@ -21,15 +21,17 @@ import {
 } from '@react-native-community/hooks';
 import { Entypo } from '@expo/vector-icons';
 
-import AppText from './app/components.js/AppText';
+import AppText from './app/components/AppText';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import colors from './app/config/colors';
-import AppButton from './app/components.js/AppButton';
+import AppButton from './app/components/AppButton';
+import Card from './app/components/Card';
+import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
 
 export default function App() {
   // return <ViewImageScreen />;
-  return <WelcomeScreen />;
+  // return <WelcomeScreen />;
   // // const handlePress = () => console.log(require('./assets/favicon.png'));
   // // console.log(Dimensions.get('window'));
   // // console.log(Dimensions.get('screen'));
@@ -77,7 +79,6 @@ export default function App() {
   //   //     }
   //   //   /> */}
   //   //   <Button title="click" onPress={() => console.log('PRessed')} />
-
   //   //   <View
   //   //     style={{
   //   //       backgroundColor: '#000',
@@ -124,7 +125,6 @@ export default function App() {
   //     ></View>
   //   </View>
   // );
-
   //   return (
   //     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
   //       <View
@@ -141,7 +141,6 @@ export default function App() {
   //     </View>
   //   );
   // }
-
   // return (
   //   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
   //     <View
@@ -176,7 +175,6 @@ export default function App() {
   //     ></View>
   //   </View>
   // );
-
   //   return (
   //     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
   //       {/* <Text
@@ -197,7 +195,6 @@ export default function App() {
   //         React Native React NativeReact NativeReact Native React NativeReact
   //         Native React NativeReact NativeReact Native React Native
   //       </Text> */}
-
   //       <AppText>I Love React Native!!!</AppText>
   //       <Entypo name="mail" color={colors.primary} size={50} />
   //       <AppButton
@@ -206,6 +203,23 @@ export default function App() {
   //       ></AppButton>
   //     </View>
   //   );
+  return (
+    // <ListingDetailsScreen />
+    <ViewImageScreen />
+    // <View
+    //   style={{
+    //     backgroundColor: '#f8f4f4',
+    //     padding: 20,
+    //     paddingTop: 100,
+    //   }}
+    // >
+    //   <Card
+    //     title="Red jacket for sale!"
+    //     subTitle="$100"
+    //     image={require('./app/assets/jacket.jpg')}
+    //   />
+    // </View>
+  );
 }
 
 // const styles = StyleSheet.create({
