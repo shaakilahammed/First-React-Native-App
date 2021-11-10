@@ -33,6 +33,7 @@ import MessagesScreen from './app/screens/MessagesScreen';
 import Screen from './app/components/Screen';
 import Icon from './app/components/Icon';
 import ListItem from './app/components/ListItem';
+import ListingScreen from './app/screens/ListingScreen';
 
 export default function App() {
   // return <ViewImageScreen />;
@@ -212,7 +213,10 @@ export default function App() {
     // <ListingDetailsScreen />
     // <WelcomeScreen />
     // <MessagesScreen />
-    <AccountScreen />
+    // <AccountScreen />
+    <ListingScreen />
+    // <ViewImageScreen />
+
     // <Screen>
     //   {/* <Icon
     //     name="email"
