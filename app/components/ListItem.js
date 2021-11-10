@@ -5,13 +5,9 @@ import { Swipeable } from 'react-native-gesture-handler';
 import colors from '../config/colors';
 import AppText from './AppText';
 
-function ListItem({ image, title, subTitle, onPress, renderRightAction }) {
+function ListItem({ image, title, subTitle, onPress, renderRightActions }) {
   return (
-    <Swipeable
-      renderLeftActions={() => (
-        <View style={{ backgroundColor: 'red', width: 50 }}></View>
-      )}
-    >
+    <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
         <View style={styles.container}>
           <Image style={styles.image} source={image} />
