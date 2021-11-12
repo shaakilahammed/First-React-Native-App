@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Platform,
@@ -14,6 +14,8 @@ import {
   Alert,
   StatusBar,
   Dimensions,
+  TextInput,
+  Switch,
 } from 'react-native';
 import {
   useDimensions,
@@ -34,8 +36,18 @@ import Screen from './app/components/Screen';
 import Icon from './app/components/Icon';
 import ListItem from './app/components/ListItem';
 import ListingScreen from './app/screens/ListingScreen';
+import AppTextInput from './app/components/AppTextInput';
+import AppPicker from './app/components/AppPicker';
+const categories = [
+  { label: 'Furniture', value: 1 },
+  { label: 'Clothing', value: 2 },
+  { label: 'Camera', value: 3 },
+];
 
 export default function App() {
+  const [firstName, setFirstName] = useState('');
+  const [isNew, setIsNew] = useState(false);
+  const [category, setCategory] = useState(categories[0]);
   // return <ViewImageScreen />;
   // return <WelcomeScreen />;
   // // const handlePress = () => console.log(require('./assets/favicon.png'));
@@ -209,37 +221,60 @@ export default function App() {
   //       ></AppButton>
   //     </View>
   //   );
-  return (
-    // <ListingDetailsScreen />
-    // <WelcomeScreen />
-    // <MessagesScreen />
-    // <AccountScreen />
-    <ListingScreen />
-    // <ViewImageScreen />
+  // return (
+  //   // <ListingDetailsScreen />
+  //   // <WelcomeScreen />
+  //   // <MessagesScreen />
+  //   // <AccountScreen />
+  //   // <ListingScreen />
+  //   // <ViewImageScreen />
 
-    // <Screen>
-    //   {/* <Icon
-    //     name="email"
-    //     size={50}
-    //     backgroundColor={colors.danger}
-    //     iconColor={colors.white}
-    //   ></Icon> */}
-    //   <ListItem title="My Title" IconComponent={<Icon name="email" />} />
-    // </Screen>
-    // <ViewImageScreen />
-    // <View
-    //   style={{
-    //     backgroundColor: '#f8f4f4',
-    //     padding: 20,
-    //     paddingTop: 100,
-    //   }}
-    // >
-    //   <Card
-    //     title="Red jacket for sale!"
-    //     subTitle="$100"
-    //     image={require('./app/assets/jacket.jpg')}
-    //   />
-    // </View>
+  //   // <Screen>
+  //   //   {/* <Icon
+  //   //     name="email"
+  //   //     size={50}
+  //   //     backgroundColor={colors.danger}
+  //   //     iconColor={colors.white}
+  //   //   ></Icon> */}
+  //   //   <ListItem title="My Title" IconComponent={<Icon name="email" />} />
+  //   // </Screen>
+  //   // <ViewImageScreen />
+  //   // <View
+  //   //   style={{
+  //   //     backgroundColor: '#f8f4f4',
+  //   //     padding: 20,
+  //   //     paddingTop: 100,
+  //   //   }}
+  //   // >
+  //   //   <Card
+  //   //     title="Red jacket for sale!"
+  //   //     subTitle="$100"
+  //   //     image={require('./app/assets/jacket.jpg')}
+  //   //   />
+  //   // </View>
+  // );
+  return (
+    <Screen>
+      {/* <AppText>{firstName}</AppText>
+      <TextInput
+        style={{ borderBottomColor: colors.light, borderBottomWidth: 1 }}
+        placeholder="First Name"
+        onChangeText={(text) => setFirstName(text)}
+        maxLength={5}
+        secureTextEntry={true}
+        keyboardType="numeric"
+      ></TextInput> */}
+      {/* <AppTextInput placeholder="First Name" icon="email" /> */}
+      {/* <Switch value={isNew} onValueChange={(newValue) => setIsNew(newValue)} /> */}
+      <AppPicker
+        selectedItem={category}
+        onSelectItem={(item) => setCategory(item)}
+        items={categories}
+        icon="apps"
+        placeholder="Category"
+      />
+      <AppTextInput icon="email" placeholder="Email" />
+    </Screen>
   );
 }
 
