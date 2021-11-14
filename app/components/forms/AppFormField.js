@@ -13,8 +13,8 @@ function AppFormField({ name, ...otherProps }) {
         // autoCorrect={false}
         // icon="email"
         // keyboardType="email-address"
-        onBlur={() => setFieldTouched('name')}
-        onChangeText={handleChange('name')}
+        onBlur={() => setFieldTouched(name)}
+        onChangeText={handleChange(name)}
         {...otherProps}
         // placeholder="Email"
         // textContentType="emailAddress"
