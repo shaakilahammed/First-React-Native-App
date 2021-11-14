@@ -4,9 +4,9 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 import AppButton from '../components/AppButton';
-import AppTextInput from '../components/AppTextInput';
+import AppTextInput from '../components/forms/AppTextInput';
 import Screen from '../components/Screen';
-import ErrorMessage from '../components/ErrorMessage';
+import ErrorMessage from '../components/forms/ErrorMessage';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),

@@ -36,8 +36,8 @@ import Screen from './app/components/Screen';
 import Icon from './app/components/Icon';
 import ListItem from './app/components/ListItem';
 import ListingScreen from './app/screens/ListingScreen';
-import AppTextInput from './app/components/AppTextInput';
-import AppPicker from './app/components/AppPicker';
+import AppTextInput from './app/components/forms/AppTextInput';
+import AppPicker from './app/components/forms/AppPicker';
 import LoginScreen from './app/screens/LoginScreen';
 import BasicLoginScreen from './app/screens/BasicLoginScreen';
 const categories = [
