@@ -40,6 +40,7 @@ import AppTextInput from './app/components/forms/AppTextInput';
 import AppPicker from './app/components/forms/AppPicker';
 import LoginScreen from './app/screens/LoginScreen';
 import BasicLoginScreen from './app/screens/BasicLoginScreen';
+import ListingEditScreen from './app/screens/ListingEditScreen';
 const categories = [
   { label: 'Furniture', value: 1 },
   { label: 'Clothing', value: 2 },
@@ -278,7 +279,8 @@ export default function App() {
   //     <AppTextInput icon="email" placeholder="Email" />
   //   </Screen>
   // );
-  return <LoginScreen />;
+  // return <LoginScreen />;
+  return <ListingEditScreen />;
 }
 
 // const styles = StyleSheet.create({
