@@ -23,6 +23,7 @@ function AppPicker({
   ...otherProps
 }) {
   const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
@@ -85,6 +86,7 @@ const styles = StyleSheet.create({
   },
   text: {
     flex: 1,
+    color: defaultStyles.colors.medium,
   },
 });
 export default AppPicker;

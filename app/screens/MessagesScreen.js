@@ -8,74 +8,25 @@ import colors from '../config/colors';
 const initialMessages = [
   {
     id: 1,
-    title: 'T1',
-    description: 'D1',
+    title:
+      'Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from',
+    description:
+      'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from ',
     image: require('../assets/mosh.jpg'),
   },
   {
     id: 2,
-    title: 'T2',
-    description: 'D2',
+    title:
+      'All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary',
+    description:
+      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, ',
     image: require('../assets/mosh.jpg'),
   },
   {
     id: 3,
-    title: 'T3',
-    description: 'D4',
-    image: require('../assets/mosh.jpg'),
-  },
-  {
-    id: 4,
-    title: 'T1',
-    description: 'D1',
-    image: require('../assets/mosh.jpg'),
-  },
-  {
-    id: 5,
-    title: 'T2',
-    description: 'D2',
-    image: require('../assets/mosh.jpg'),
-  },
-  {
-    id: 12,
-    title: 'T3',
-    description: 'D4',
-    image: require('../assets/mosh.jpg'),
-  },
-  {
-    id: 6,
-    title: 'T1',
-    description: 'D1',
-    image: require('../assets/mosh.jpg'),
-  },
-  {
-    id: 7,
-    title: 'T2',
-    description: 'D2',
-    image: require('../assets/mosh.jpg'),
-  },
-  {
-    id: 8,
-    title: 'T3',
-    description: 'D4',
-    image: require('../assets/mosh.jpg'),
-  },
-  {
-    id: 9,
-    title: 'T1',
-    description: 'D1',
-    image: require('../assets/mosh.jpg'),
-  },
-  {
-    id: 10,
-    title: 'T2',
-    description: 'D2',
-    image: require('../assets/mosh.jpg'),
-  },
-  {
-    id: 11,
-    title: 'T3',
-    description: 'D4',
+    title: 'The generated Lorem Ipsum is therefore always free from repetition',
+    description:
+      'making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.',
     image: require('../assets/mosh.jpg'),
   },
 ];
