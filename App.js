@@ -23,7 +23,7 @@ import {
 } from '@react-native-community/hooks';
 import { Entypo } from '@expo/vector-icons';
 
-import AppText from './app/components/AppText';
+// import AppText from './app/components/AppText';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import AccountScreen from './app/screens/AccountScreen';
@@ -280,7 +280,8 @@ export default function App() {
   //   </Screen>
   // );
   // return <LoginScreen />;
-  return <ListingEditScreen />;
+
+  return <MessagesScreen />;
 }
 
 // const styles = StyleSheet.create({
