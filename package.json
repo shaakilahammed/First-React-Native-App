@@ -22,7 +22,8 @@
     "react-native-font-weight": "^0.1.5-alpha",
     "react-native-gesture-handler": "~1.10.2",
     "react-native-web": "0.17.1",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "expo-image-picker": "~11.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
