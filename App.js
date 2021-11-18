@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   StyleSheet,
   Platform,
@@ -22,6 +22,8 @@ import {
   useDeviceOrientation,
 } from '@react-native-community/hooks';
 import { Entypo } from '@expo/vector-icons';
+import * as ImagePicker from 'expo-image-picker';
+import * as Permissions from 'expo-permissions';
 
 // import AppText from './app/components/AppText';
 import WelcomeScreen from './app/screens/WelcomeScreen';
@@ -48,6 +50,7 @@ const categories = [
 ];
 
 export default function App() {
+  const [ImageUri, setImageUri] = useState();
   // const [firstName, setFirstName] = useState('');
   // const [isNew, setIsNew] = useState(false);
   // const [category, setCategory] = useState(categories[0]);
@@ -281,10 +284,39 @@ export default function App() {
   // );
   // return <LoginScreen />;
 
-  return <ListingEditScreen />;
+  // return <ListingEditScreen />;
+  const requestPermission = async () => {
+    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (!granted) alert('You need to enable Permission');
+  };
+
+  useEffect(async () => {
+    const result = requestPermission();
+  }, [1]);
+
+  const selectImage = async () => {
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync();
+      if (!result.cancelled) {
+        setImageUri(result.uri);
+      }
+    } catch (error) {
+      console.log('Error Reading Image', error);
+    }
+  };
+
+  return (
+    <Screen>
+      <Button title="Select Image" onPress={selectImage} />
+      <Image
+        source={{ uri: ImageUri }}
+        style={{ width: 200, height: 200 }}
+      ></Image>
+    </Screen>
+  );
 }
 
-// const styles = StyleSheet.create({
+// const styles = StyleSheet.create( {
 //   container: {
 //     flex: 1,
 //     backgroundColor: '#f7b731',
