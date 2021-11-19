@@ -295,25 +295,23 @@ export default function App() {
     const result = requestPermission();
   }, []);
 
-  const selectImage = async () => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      if (!result.cancelled) {
-        setImageUri(result.uri);
-      }
-    } catch (error) {
-      console.log('Error Reading Image', error);
-    }
-  };
+  // const selectImage = async () => {
+  //   try {
+  //     const result = await ImagePicker.launchImageLibraryAsync();
+  //     if (!result.cancelled) {
+  //       setImageUri(result.uri);
+  //     }
+  //   } catch (error) {
+  //     console.log('Error Reading Image', error);
+  //   }
+  // };
 
   return (
     <Screen>
-      <Button title="Select Image" onPress={selectImage} />
-      <Image
-        source={{ uri: ImageUri }}
-        style={{ width: 200, height: 200 }}
-      ></Image>
-      <ImageInput imageUri={ImageUri} />
+      <ImageInput
+        imageUri={ImageUri}
+        onChangeImage={(uri) => setImageUri(uri)}
+      />
     </Screen>
   );
 }
