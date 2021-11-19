@@ -43,6 +43,7 @@ import AppPicker from './app/components/forms/AppPicker';
 import LoginScreen from './app/screens/LoginScreen';
 import BasicLoginScreen from './app/screens/BasicLoginScreen';
 import ListingEditScreen from './app/screens/ListingEditScreen';
+import ImageInput from './app/components/forms/ImageInput';
 const categories = [
   { label: 'Furniture', value: 1 },
   { label: 'Clothing', value: 2 },
@@ -287,31 +288,30 @@ export default function App() {
   // return <ListingEditScreen />;
   const requestPermission = async () => {
     const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (!granted) alert('You need to enable Permission');
+    // if (!granted) alert('You need to enable Permission');
   };
 
   useEffect(async () => {
     const result = requestPermission();
-  }, [1]);
+  }, []);
 
-  const selectImage = async () => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      if (!result.cancelled) {
-        setImageUri(result.uri);
-      }
-    } catch (error) {
-      console.log('Error Reading Image', error);
-    }
-  };
+  // const selectImage = async () => {
+  //   try {
+  //     const result = await ImagePicker.launchImageLibraryAsync();
+  //     if (!result.cancelled) {
+  //       setImageUri(result.uri);
+  //     }
+  //   } catch (error) {
+  //     console.log('Error Reading Image', error);
+  //   }
+  // };
 
   return (
     <Screen>
-      <Button title="Select Image" onPress={selectImage} />
-      <Image
-        source={{ uri: ImageUri }}
-        style={{ width: 200, height: 200 }}
-      ></Image>
+      <ImageInput
+        imageUri={ImageUri}
+        onChangeImage={(uri) => setImageUri(uri)}
+      />
     </Screen>
   );
 }
