@@ -44,6 +44,7 @@ import LoginScreen from './app/screens/LoginScreen';
 import BasicLoginScreen from './app/screens/BasicLoginScreen';
 import ListingEditScreen from './app/screens/ListingEditScreen';
 import ImageInput from './app/components/forms/ImageInput';
+import ImageInputList from './app/components/forms/ImageInputList';
 const categories = [
   { label: 'Furniture', value: 1 },
   { label: 'Clothing', value: 2 },
@@ -51,7 +52,7 @@ const categories = [
 ];
 
 export default function App() {
-  const [ImageUri, setImageUri] = useState();
+  const [imageUris, setImageUris] = useState([]);
   // const [firstName, setFirstName] = useState('');
   // const [isNew, setIsNew] = useState(false);
   // const [category, setCategory] = useState(categories[0]);
@@ -286,14 +287,14 @@ export default function App() {
   // return <LoginScreen />;
 
   // return <ListingEditScreen />;
-  const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    // if (!granted) alert('You need to enable Permission');
-  };
+  // const requestPermission = async () => {
+  //   const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+  //   if (!granted) alert('You need to enable Permission');
+  // };
 
-  useEffect(async () => {
-    const result = requestPermission();
-  }, []);
+  // useEffect(async () => {
+  //   const result = requestPermission();
+  // }, []);
 
   // const selectImage = async () => {
   //   try {
@@ -305,12 +306,18 @@ export default function App() {
   //     console.log('Error Reading Image', error);
   //   }
   // };
-
+  const handleAdd = (uri) => {
+    setImageUris([...imageUris, uri]);
+  };
+  const handleRemove = (uri) => {
+    setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
+  };
   return (
     <Screen>
-      <ImageInput
-        imageUri={ImageUri}
-        onChangeImage={(uri) => setImageUri(uri)}
+      <ImageInputList
+        imageUris={imageUris}
+        onAddImage={handleAdd}
+        onRemoveImage={handleRemove}
       />
     </Screen>
   );
