@@ -306,20 +306,21 @@ export default function App() {
   //     console.log('Error Reading Image', error);
   //   }
   // };
-  const handleAdd = (uri) => {
-    setImageUris([...imageUris, uri]);
-  };
-  const handleRemove = (uri) => {
-    setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
-  };
+  // const handleAdd = (uri) => {
+  //   setImageUris([...imageUris, uri]);
+  // };
+  // const handleRemove = (uri) => {
+  //   setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
+  // };
   return (
-    <Screen>
-      <ImageInputList
-        imageUris={imageUris}
-        onAddImage={handleAdd}
-        onRemoveImage={handleRemove}
-      />
-    </Screen>
+    // <Screen>
+    //   <ImageInputList
+    //     imageUris={imageUris}
+    //     onAddImage={handleAdd}
+    //     onRemoveImage={handleRemove}
+    //   />
+    // </Screen>
+    <ListingEditScreen />
   );
 }
 
