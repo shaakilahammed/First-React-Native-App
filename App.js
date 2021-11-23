@@ -49,6 +49,9 @@ import BasicLoginScreen from './app/screens/BasicLoginScreen';
 import ListingEditScreen from './app/screens/ListingEditScreen';
 import ImageInput from './app/components/forms/ImageInput';
 import ImageInputList from './app/components/forms/ImageInputList';
+import RegisterScreen from './app/screens/RegisterScreen';
+import AuthNavigator from './app/navigation/AuthNavigator';
+import navigationTheme from './app/navigation/navigationTheme';
 const categories = [
   { label: 'Furniture', value: 1 },
   { label: 'Clothing', value: 2 },
@@ -413,9 +416,12 @@ export default function App() {
     //   />
     // </Screen>
     // <ListingEditScreen />
-    <NavigationContainer>
-      {/* <StackNavigator /> */}
-      <TabNavigator />
+    // <NavigationContainer>
+    //   {/* <StackNavigator /> */}
+    //   <TabNavigator />
+    // </NavigationContainer>
+    <NavigationContainer theme={navigationTheme}>
+      <AuthNavigator />
     </NavigationContainer>
   );
 }
