@@ -26,6 +26,8 @@ import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 // import AppText from './app/components/AppText';
 import WelcomeScreen from './app/screens/WelcomeScreen';
@@ -76,6 +78,12 @@ const TweetDetails = ({ route }) => (
   </Screen>
 );
 
+const Account = () => (
+  <Screen>
+    <Text>Account</Text>
+  </Screen>
+);
+
 const Stack = createNativeStackNavigator();
 const StackNavigator = () => (
   <Stack.Navigator
@@ -98,6 +106,41 @@ const StackNavigator = () => (
       options={({ route }) => ({ title: `Tweet Details - ${route.params.id}` })}
     />
   </Stack.Navigator>
+);
+
+const Tab = createBottomTabNavigator();
+const TabNavigator = () => (
+  <Tab.Navigator
+    screenOptions={{
+      tabBarActiveBackgroundColor: 'tomato',
+      tabBarActiveTintColor: 'white',
+      tabBarInactiveBackgroundColor: '#eee',
+      tabBarInactiveTintColor: 'black',
+    }}
+  >
+    <Tab.Screen
+      name="Feed"
+      component={StackNavigator}
+      options={{
+        tabBarIcon: ({ size, color }) => (
+          <MaterialCommunityIcons color={color} name="home" size={size} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Account"
+      component={Account}
+      options={{
+        tabBarIcon: ({ size, color }) => (
+          <MaterialCommunityIcons
+            color={color}
+            name="baby-face-outline"
+            size={size}
+          />
+        ),
+      }}
+    />
+  </Tab.Navigator>
 );
 
 export default function App() {
@@ -371,7 +414,8 @@ export default function App() {
     // </Screen>
     // <ListingEditScreen />
     <NavigationContainer>
-      <StackNavigator />
+      {/* <StackNavigator /> */}
+      <TabNavigator />
     </NavigationContainer>
   );
 }
