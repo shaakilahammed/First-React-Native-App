@@ -24,6 +24,10 @@ import {
 import { Entypo } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 // import AppText from './app/components/AppText';
 import WelcomeScreen from './app/screens/WelcomeScreen';
@@ -45,11 +49,102 @@ import BasicLoginScreen from './app/screens/BasicLoginScreen';
 import ListingEditScreen from './app/screens/ListingEditScreen';
 import ImageInput from './app/components/forms/ImageInput';
 import ImageInputList from './app/components/forms/ImageInputList';
+import RegisterScreen from './app/screens/RegisterScreen';
+import AuthNavigator from './app/navigation/AuthNavigator';
+import navigationTheme from './app/navigation/navigationTheme';
 const categories = [
   { label: 'Furniture', value: 1 },
   { label: 'Clothing', value: 2 },
   { label: 'Camera', value: 3 },
 ];
+
+const Link = () => {
+  const navigation = useNavigation();
+  return (
+    <Button title="Click" onPress={() => navigation.navigate('TweetDetails')} />
+  );
+};
+
+const Tweets = ({ navigation }) => (
+  <Screen>
+    <Text>Tweets</Text>
+    <Button
+      title="View Tweet"
+      onPress={() => navigation.navigate('TweetDetails', { id: 1 })}
+    />
+    {/* <Link /> */}
+  </Screen>
+);
+const TweetDetails = ({ route }) => (
+  <Screen>
+    <Text>Tweet Details - {route.params.id}</Text>
+  </Screen>
+);
+
+const Account = () => (
+  <Screen>
+    <Text>Account</Text>
+  </Screen>
+);
+
+const Stack = createNativeStackNavigator();
+const StackNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="Tweets"
+    screenOptions={{
+      headerStyle: { backgroundColor: 'tomato' },
+      headerTintColor: 'white',
+    }}
+  >
+    <Stack.Screen
+      name="Tweets"
+      component={Tweets}
+      options={{
+        title: 'Tweet',
+      }}
+    />
+    <Stack.Screen
+      name="TweetDetails"
+      component={TweetDetails}
+      options={({ route }) => ({ title: `Tweet Details - ${route.params.id}` })}
+    />
+  </Stack.Navigator>
+);
+
+const Tab = createBottomTabNavigator();
+const TabNavigator = () => (
+  <Tab.Navigator
+    screenOptions={{
+      tabBarActiveBackgroundColor: 'tomato',
+      tabBarActiveTintColor: 'white',
+      tabBarInactiveBackgroundColor: '#eee',
+      tabBarInactiveTintColor: 'black',
+    }}
+  >
+    <Tab.Screen
+      name="Feed"
+      component={StackNavigator}
+      options={{
+        tabBarIcon: ({ size, color }) => (
+          <MaterialCommunityIcons color={color} name="home" size={size} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Account"
+      component={Account}
+      options={{
+        tabBarIcon: ({ size, color }) => (
+          <MaterialCommunityIcons
+            color={color}
+            name="baby-face-outline"
+            size={size}
+          />
+        ),
+      }}
+    />
+  </Tab.Navigator>
+);
 
 export default function App() {
   const [imageUris, setImageUris] = useState([]);
@@ -320,7 +415,14 @@ export default function App() {
     //     onRemoveImage={handleRemove}
     //   />
     // </Screen>
-    <ListingEditScreen />
+    // <ListingEditScreen />
+    // <NavigationContainer>
+    //   {/* <StackNavigator /> */}
+    //   <TabNavigator />
+    // </NavigationContainer>
+    <NavigationContainer theme={navigationTheme}>
+      <AuthNavigator />
+    </NavigationContainer>
   );
 }
 
