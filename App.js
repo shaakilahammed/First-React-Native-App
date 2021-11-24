@@ -52,6 +52,7 @@ import ImageInputList from './app/components/forms/ImageInputList';
 import RegisterScreen from './app/screens/RegisterScreen';
 import AuthNavigator from './app/navigation/AuthNavigator';
 import navigationTheme from './app/navigation/navigationTheme';
+import AppNavigator from './app/navigation/AppNavigator';
 const categories = [
   { label: 'Furniture', value: 1 },
   { label: 'Clothing', value: 2 },
@@ -421,7 +422,8 @@ export default function App() {
     //   <TabNavigator />
     // </NavigationContainer>
     <NavigationContainer theme={navigationTheme}>
-      <AuthNavigator />
+      {/* <AuthNavigator /> */}
+      <AppNavigator />
     </NavigationContainer>
   );
 }
