@@ -422,8 +422,8 @@ export default function App() {
     //   <TabNavigator />
     // </NavigationContainer>
     <NavigationContainer theme={navigationTheme}>
-      <AuthNavigator />
-      {/* <AppNavigator /> */}
+      {/* <AuthNavigator /> */}
+      <AppNavigator />
     </NavigationContainer>
   );
 }
