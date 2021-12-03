@@ -16,6 +16,8 @@ function ListingScreen({ navigation }) {
     getListingsApi.request();
   }, []);
 
+  const [refreshing, setRefreshing] = useState(false);
+
   return (
     <Screen style={styles.screen}>
       {getListingsApi.error && (
@@ -36,6 +38,10 @@ function ListingScreen({ navigation }) {
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}
+        refreshing={refreshing}
+        onRefresh={() => {
+          getListingsApi.request();
+        }}
       />
     </Screen>
   );
