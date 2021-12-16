@@ -28,6 +28,7 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import NetInfo, { useNetInfo } from '@react-native-community/netinfo';
 
 // import AppText from './app/components/AppText';
 import WelcomeScreen from './app/screens/WelcomeScreen';
@@ -408,6 +409,14 @@ export default function App() {
   // const handleRemove = (uri) => {
   //   setImageUris(imageUris.filter((imageUri) => imageUri !== uri));
   // };
+  // const unsubscribe = NetInfo.addEventListener((netInfo) =>
+  //   console.log(netInfo)
+  // );
+  // unsubscribe();
+  const netInfo = useNetInfo();
+  netInfo.isInternetReachable
+    ? console.log('Connected')
+    : console.log('Not Connected');
   return (
     // <Screen>
     //   <ImageInputList
@@ -421,6 +430,7 @@ export default function App() {
     //   {/* <StackNavigator /> */}
     //   <TabNavigator />
     // </NavigationContainer>
+
     <NavigationContainer theme={navigationTheme}>
       {/* <AuthNavigator /> */}
       <AppNavigator />
