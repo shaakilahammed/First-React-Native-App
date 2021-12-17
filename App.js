@@ -29,6 +29,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import NetInfo, { useNetInfo } from '@react-native-community/netinfo';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // import AppText from './app/components/AppText';
 import WelcomeScreen from './app/screens/WelcomeScreen';
@@ -417,6 +418,22 @@ export default function App() {
   netInfo.isInternetReachable
     ? console.log('Connected')
     : console.log('Not Connected');
+
+  const demo = async () => {
+    try {
+      await AsyncStorage.setItem(
+        'person',
+        JSON.stringify({ id: 1, name: 'Shakil' })
+      );
+      // await AsyncStorage.clear();
+      const value = await AsyncStorage.getItem('person');
+      const person = value ? JSON.parse(value) : null;
+      console.log(person);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  demo();
   return (
     // <Screen>
     //   <ImageInputList
